@@ -17,24 +17,24 @@
   </header>
   <nav>
     <div>
-      <a href='/'>Home</a>
+      <a href='/' hx-get='/' hx-target='#main-content' hx-swap='innerHTML'>Home</a>
       {{if .IsAuthenticated}}
-      <a href='/snippet/create'>Create Snippet</a>
+      <a href='/snippet/create' hx-get='/snippet/create' hx-target='#main-content' hx-swap='innerHTML'>Create Snippet</a>
       {{end}}
     </div>
     <div>
       {{if .IsAuthenticated}}
-      <form action='/user/logout' method='POST'>
+      <form action='/user/logout' method='POST' hx-post='/user/logout' hx-target='#main-content' hx-swap='innerHTML'>
         <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
         <button>Logout</button>
       </form>
       {{else}}
-      <a href='/user/signup'>Signup</a>
-      <a href='/user/login'>Login</a>
+      <a href='/user/signup' hx-get='/user/signup' hx-target='#main-content' hx-swap='innerHTML'>Signup</a>
+      <a href='/user/login' hx-get='/user/login' hx-target='#main-content' hx-swap='innerHTML'>Login</a>
       {{end}}
     </div>  
   </nav>
-<main>
+<main id="main-content">
     {{with .Flash}}
     <div class='flash'>{{.}}</div>
     {{end}}
@@ -46,3 +46,4 @@
 
 </html>
 {{end}}
+```
