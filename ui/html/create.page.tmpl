@@ -3,7 +3,7 @@
 {{define "title"}}Create a New Snippet{{end}}
 
 {{define "main"}}
-<form action='/snippet/create' method='POST'>
+<form action='/snippet/create' method='POST' hx-post='/snippet/create' hx-target='#main-content' hx-swap='innerHTML'>
   <input type='hidden' name='csrf_token' value='{{.CSRFToken}}'>
   {{with .Form}}
   <div>
