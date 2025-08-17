@@ -305,4 +305,3 @@ This plan outlines the incremental implementation of HTMX support for the snippe
 4. Test the basic functionality
 
 5. Proceed to Phase 2 and 3 tasks incrementally
-```
