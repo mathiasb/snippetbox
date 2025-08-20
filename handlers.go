@@ -230,8 +230,3 @@ func (app *application) logoutUser(w http.ResponseWriter, r *http.Request) {
 	
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
-```
-
-I also need to update the testutils_test.go file to add the missing imports and helper functions:
-
-testutils_test.go
